@@ -1,0 +1,31 @@
+[33mcommit b3ad901cd96fa867adce82fa4047a992223c2752[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Yakub Muhammed <yakubmuhammed51@gmail.com>
+Date:   Wed Jun 29 01:00:46 2022 -0700
+
+    Admin panel setup part 1
+    
+    the structure of the admin panel has been initialised but without css stylings
+
+[33mcommit 0c079b7a1b52dbeac1f14640b4a8a61c25d65e07[m
+Author: Yakub Muhammed <yakubmuhammed51@gmail.com>
+Date:   Wed Jun 29 00:19:14 2022 -0700
+
+    updated login with username and password
+    
+    the default login and registeration method was changed from using of email and password to use of username and password
+
+[33mcommit d735b15cc34dd6ee3434f50991ae3038d20d3de8[m
+Author: Yakub Muhammed <yakubmuhammed51@gmail.com>
+Date:   Tue Jun 28 11:59:07 2022 -0700
+
+    Setting up Admin pages
+    
+    the admin page is the back end of the application
+
+[33mcommit 6be5b4e09578aedd4e6be76b7fd5afcf7fa3c960[m
+Author: Yakub Muhammed <yakubmuhammed51@gmail.com>
+Date:   Tue Jun 28 05:49:50 2022 -0700
+
+    Staff appraisal and staff promotion system in php using laravel 9
+    
+    # Descriptions will come in here later!
