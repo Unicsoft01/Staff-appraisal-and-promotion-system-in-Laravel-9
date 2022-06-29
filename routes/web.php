@@ -22,7 +22,7 @@ Route::get('/', function () {
 //     Route::get('/dashboard', 'Index')->middleware(['auth'])->name('dashboard'); 
 // });
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
 
 
