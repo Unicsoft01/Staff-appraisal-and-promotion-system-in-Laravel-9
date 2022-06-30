@@ -17,13 +17,15 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 // all routes in admin controlller class
-// Route::controller(AdminController::class)->group(function (){
-//     Route::get('/dashboard', 'Index')->middleware(['auth'])->name('dashboard'); 
-// });
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth'])->name('dashboard');
+Route::controller(AdminController::class)->group(function (){
+    Route::get('/dashboard', 'Index')->middleware(['auth'])->name('dashboard'); 
+    Route::get('/logout', 'destroy')->middleware(['auth'])->name('logout'); 
+    Route::get('/staffs/take_attendance', 'TakeAttendance')->middleware(['auth'])->name('take_attendance'); 
+    Route::get('/staffs/attendance/review', 'ReviewAttendance')->middleware(['auth'])->name('att_rev'); 
+    Route::get('/staffs/list', 'ListStaffs')->middleware(['auth'])->name('staff_list'); 
+});
 
 
 require __DIR__.'/auth.php';

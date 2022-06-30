@@ -1,36 +1,63 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{asset('backend_asset/vendors/feather/feather.css')}}">
+  <link rel="stylesheet" href="{{asset('backend_asset/vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('backend_asset/vendors/css/vendor.bundle.base.css')}}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{asset('backend_asset/css/vertical-layout-light/style.css')}}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{asset('backend_asset/images/favicon.png')}}" />
+</head>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<body>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-6 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="brand-logo">
+                <img src="{{asset('backend_asset/images/logo.svg')}}" alt="logo">
+              </div>
+              <h5>
+                  {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+              </h5>
+            <!-- Session Status -->
+            <x-auth-session-status class="mb-4" :status="session('status')" />
+            <!-- Validation Errors -->
+            <x-auth-validation-errors class="mb-4 text-danger" :errors="$errors" />
+            <form method="POST" action="{{ route('password.email') }}">
+                @csrf
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
+                <div class="mt-5 form-group">
+                  <input id="email" type="email" name="email" :value="old('email')" required autofocus class="form-control form-control-lg" placeholder="Enter a Verified Email address">
+                </div>
+                <div class="mb-2 flex items-center justify-end">
+                  <a type="button" href="/login" class="btn btn-secondary auth-form-btn">
+                    {{ __('Cancel') }}
+                  </a>
+                  <button class="btn btn-primary auth-form-btn">
                     {{ __('Email Password Reset Link') }}
-                </x-button>
+                  </button>
+                </div>
+              </form>
             </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

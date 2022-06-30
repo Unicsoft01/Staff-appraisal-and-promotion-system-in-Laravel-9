@@ -1,98 +1,73 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        
-        <meta charset="utf-8" />
-        <title>Dashboard | Upcube - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('/backend_assets/images/favicon.ico')}}">
-
-        <!-- jquery.vectormap css -->
-        <link href="{{asset('/backend_assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
-
-        <!-- DataTables -->
-        <link href="{{asset('/backend_assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
-
-        <!-- Responsive datatable examples -->
-        <link href="{{asset('/backend_assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />  
-
-        <!-- Bootstrap Css -->
-        <link href="{{asset('/backend_assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="{{asset('/backend_assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="{{asset('/backend_assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-
-    </head>
-
-    <body data-topbar="dark">
-    
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-
-        <!-- Begin page -->
-        <div id="layout-wrapper">
-
-            
-<!-- header patth -->
-@include('admin.inc.navbar')
-
-            <!-- ========== Left Sidebar Start ========== -->
-@include('admin.inc.sidebar')
-            <!-- Left Sidebar End -->
-
-            <!-- Start right Content here -->
-            <div class="main-content">
-
-                @yield('admin')
-                <!-- End Page-content -->
-               
-@include('admin.inc.footer')
-
-                
-            </div>
-            <!-- end main content-->
-
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{{asset('/backend_asset/vendors/feather/feather.css')}}">
+  <link rel="stylesheet" href="{{asset('/backend_asset/vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('/backend_asset/vendors/css/vendor.bundle.base.css')}}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{{asset('/backend_asset/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+  <link rel="stylesheet" href="{{asset('/backend_asset/vendors/ti-icons/css/themify-icons.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('/backend_asset/js/select.dataTables.min.css')}}">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{asset('/backend_asset/css/vertical-layout-light/style.css')}}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{asset('/backend_asset/images/favicon.png')}}" />
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    @include('admin.inc.navbar')
+    @include('admin.inc.rsidebar') 
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+    @include('admin.inc.sidebar') 
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            @yield('contents')
         </div>
-        <!-- END layout-wrapper -->
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+@include('admin.inc.footer') 
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
 
-        <!-- Right Sidebar -->
-@include('admin.inc.rsidebar')
-        <!-- /Right-bar -->
+  <!-- plugins:js -->
+  <script src="{{asset('/backend_asset/vendors/js/vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{{asset('/backend_asset/vendors/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('/backend_asset/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+  <script src="{{asset('/backend_asset/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+  <script src="js/dataTables.select.min.js')}}"></script>
 
-        <!-- Right bar overlay-->
-        <div class="rightbar-overlay"></div>
-
-        <!-- JAVASCRIPT -->
-        <script src="{{asset('/backend_assets/libs/jquery/jquery.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/metismenu/metisMenu.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/simplebar/simplebar.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/node-waves/waves.min.js')}}"></script>
-
-        
-        <!-- apexcharts -->
-        <script src="{{asset('/backend_assets/libs/apexcharts/apexcharts.min.js')}}"></script>
-
-        <!-- jquery.vectormap map -->
-        <script src="{{asset('/backend_assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js')}}"></script>
-
-        <!-- Required datatable js -->
-        <script src="{{asset('/backend_assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-        
-        <!-- Responsive examples -->
-        <script src="{{asset('/backend_assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
-        <script src="{{asset('/backend_assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-
-        <script src="{{asset('/backend_assets/js/pages/dashboard.init.js')}}"></script>
-
-        <!-- App js -->
-        <script src="{{asset('/backend_assets/js/app.js')}}"></script>
-    </body>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{asset('/backend_asset/js/off-canvas.js')}}"></script>
+  <script src="{{asset('/backend_asset/js/hoverable-collapse.js')}}"></script>
+  <script src="{{asset('/backend_asset/js/template.js')}}"></script>
+  <script src="{{asset('/backend_asset/js/settings.js')}}"></script>
+  <script src="{{asset('/backend_asset/js/todolist.js')}}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{{asset('/backend_asset/js/dashboard.js')}}"></script>
+  <script src="{{asset('/backend_asset/js/Chart.roundedBarCharts.js')}}"></script>
+  <!-- End custom js for this page-->
+</body>
 
 </html>
+
