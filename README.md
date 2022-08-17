@@ -23,3 +23,14 @@ personal rating
 --> Salary increments
 --> level increments
 --> Level
+
+
+# Guides for laravel customisations
+
+## how to make middleware
+-- run php artisan make:middleware in CLI\
+-- add middle ware to kernel list to make it run durring any http request
+
+# important
+if apprasial level reach a certain levfel the admin can then initiate the command from his dashboard
+-- upon login and 

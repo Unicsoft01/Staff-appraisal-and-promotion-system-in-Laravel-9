@@ -30,8 +30,8 @@
                 <!-- <img src="{{asset('backend_asset/images/logo.svg')}}" alt="logo"> -->
                 PAAU STAFF APPRAISAL
               </div>
-              <h4>Hello! Welcome back</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
+              <h4>Hello! Dear guest</h4>
+              <h6 class="font-weight-light">Register to continue.</h6>
 
             <!-- Session Status -->
             <x-auth-session-status class="mb-4 text-muted" :status="session('status')" />
@@ -45,6 +45,21 @@
                   <input type="text" class="form-control form-control-lg" id="username" name="username" :value="old('username')" required autofocus  placeholder="Enter Username">
                 </div>
                 <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="username" name="username" :value="old('username')" required autofocus  placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="username" name="username" :value="old('username')" required autofocus  placeholder="Account type">
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="username" name="username" :value="old('username')" required autofocus  placeholder="Department">
+                </div>
+
+                <div class="form-group">
+                  <input type="date" class="form-control form-control-lg" id="username" name="username" :value="old('username')" required autofocus  placeholder="Enter date of birth">
+                </div>
+
+                <div class="form-group">
                   <input type="password" name="password" class="form-control form-control-lg" id="password" required autocomplete="current-password">
                 </div>
                 <div class="mt-3">
@@ -54,22 +69,18 @@
                   <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input" name="remember">
-                     {{ __('Keep me signed in') }} 
+                     {{ __('I agree to all Terms & Conditions
+') }} 
                     </label>
                   </div>
-                  @if (Route::has('password.request'))
-                    <a class="auth-link text-black" href="{{ route('password.request') }}">
-                        {{ __('Forgot password?') }}
-                    </a>
-                @endif
                 </div>
                 <div class="mb-2">
                   <button class="btn btn-block btn-primary auth-form-btn">
-                    {{ __('Log in') }}
+                    {{ __('register') }}
                   </button>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="{{route('register')}}" class="text-primary">Create</a>
+                 Already have an account? <a href="{{route('login')}}" class="text-primary">Login</a>
                 </div>
               </form>
             </div>

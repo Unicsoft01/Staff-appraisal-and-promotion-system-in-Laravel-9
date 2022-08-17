@@ -18,22 +18,36 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title text-center">
-                    Good Morning, You came in:
+                    @php
+                    $pmt = date('a');
+                        if($pmt==='a')
+                        {
+                          echo "Good Morning,";
+                        }
+                        else {
+                          echo "Good day,";
+                        }
+                    @endphp You came in:
                   </h4>
                   <h1 class="card-description text-center">
-                    {{ date('h:i')}}<span class="text-sm"> {{ date('a')}}</span>
+                    {{ $timeIn = date('h:i',strtotime("+1 hour"))}}<span class="text-sm"> {{ $pmt }}</span>
                   </h1>
                   <h4 class="card-title text-center">
                     Please enter your Username to continue
                   </h4>
-                  <form class="forms-sample">
+                              <!-- Session Status -->
+            <x-auth-session-status class="mb-4 text-muted" :status="session('status')" />
+
+            <!-- Validation Errors -->
+            <x-auth-validation-errors class="mb-4 text-danger" :errors="$errors" />
+                  <form method="POST" action="{{ route('save.attend')}}" class="forms-sample">
+                    @csrf
                     <div class="form-group">
                       <label for="exampleInputUsername1">Username</label>
-                      <input style="border-radius:2pc ;" type="text" class="text center form-control" id="exampleInputUsername1" placeholder="Username">
-
+                      <input style="border-radius:2pc ;" type="text" class="text center form-control" name="username" placeholder="Username">
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button name="cancel" class="btn btn-light">Cancel</button>
                   </form>
                 </div>
               </div>

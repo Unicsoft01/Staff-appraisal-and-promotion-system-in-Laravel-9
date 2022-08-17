@@ -23,11 +23,35 @@
               <tbody>
                 <tr>
                   <th> 1</th>
-                  <th>Adekunle Salt</th>
+                  <th>Mr Flawless</th>
                   <th>20/06/22</th>
                   <th>8:45:23 am</th>
                   <th>Very Late</th>
                   <th class="text-danger">-2.3</th>
+                </tr>
+                <tr>
+                  <th> 2</th>
+                  <th>Mr ICT</th>
+                  <th>20/06/22</th>
+                  <th>7:45:23 am</th>
+                  <th>Early</th>
+                  <th class="text-success">+2.3</th>
+                </tr>
+                <tr>
+                  <th> 3</th>
+                  <th>Mr Flawless</th>
+                  <th>21/06/22</th>
+                  <th>8:00:23 am</th>
+                  <th>On time</th>
+                  <th class="text-primary">+2.3</th>
+                </tr>
+                <tr>
+                  <th> 4</th>
+                  <th>Mr ICT</th>
+                  <th>21/06/22</th>
+                  <th>7:15:23 am</th>
+                  <th>Very Early</th>
+                  <th class="text-success">+2.5</th>
                 </tr>
               </tbody>
             </table>

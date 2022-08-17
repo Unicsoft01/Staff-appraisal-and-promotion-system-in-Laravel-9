@@ -32,10 +32,10 @@
           <a class="nav-link" href="{{ route('staff_list') }}">Staffs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/forms/basic_elements.html">Evaluate Task</a>
+          <a class="nav-link" href="{{ route('evaluate') }}">Evaluate Task</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/forms/basic_elements.html">Allocate Task</a>
+          <a class="nav-link" href="#">Allocate Task</a>
         </li>
       </ul>
     </div>

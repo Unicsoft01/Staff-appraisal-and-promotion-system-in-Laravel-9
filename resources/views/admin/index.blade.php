@@ -26,7 +26,7 @@
                 </div>
             </div>
 
-            <div class="row">
+      <!--       <div class="row">
                 <div class="col-md-12 grid-margin stretch-card">
                   <div class="card position-relative">
                     <div class="card-body">
@@ -205,7 +205,7 @@
                     </div>
                   </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row">
                 <div class="col-md-12 grid-margin stretch-card">
@@ -225,23 +225,23 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Search Engine Marketing</td>
+                              <td>Trim flowers around Senate building</td>
                               <td class="font-weight-bold">Mr Flawless</td>
-                              <td>21 Sep 2018</td>
+                              <td>21 june 2022</td>
                               <td>100%</td>
                               <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
                             </tr>
                             <tr>
-                              <td>Search Engine Marketing</td>
-                              <td class="font-weight-bold">Mr Flawless</td>
-                              <td>21 Sep 2018</td>
-                              <td>100%</td>
-                              <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                              <td>Optimise and Sync all results</td>
+                              <td class="font-weight-bold">Mr ICT</td>
+                              <td>09 June 2022</td>
+                              <td>50%</td>
+                              <td class="font-weight-medium"><div class="badge badge-info">pending</div></td>
                             </tr>
                             <tr>
-                              <td>Search Engine Marketing</td>
-                              <td class="font-weight-bold">Mr Flawless</td>
-                              <td>21 Sep 2018</td>
+                              <td>Address all returning students</td>
+                              <td class="font-weight-bold">Mr Deen [natural science]</td>
+                              <td>11 june 2022</td>
                               <td>100%</td>
                               <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
                             </tr>

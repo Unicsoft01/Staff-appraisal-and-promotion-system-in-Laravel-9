@@ -24,9 +24,9 @@
                 <tr>
                   <th>S/No.</th>
                   <th>Staffs</th>
-                  <th>Date</th>
-                  <th>Time in</th>
-                  <th>Remark</th>
+                  <th>Department</th>
+                  <th>Account type</th>
+                  <th>Salary</th>
                   <th>Appraisal level</th>
                   <th>Action</th>
                 </tr>
@@ -35,10 +35,10 @@
                 <tr>
                   <td> 1</td>
                   <td>Adekunle Salt</td>
-                  <td>20/06/22</td>
-                  <td>8:45:23 am</td>
-                  <td>Very Late</td>
-                  <td class="text-danger">-2.3</td>
+                  <td>Cleaning and Sanitation</td>
+                  <td>Non Academic staff</td>
+                  <td>70,000</td>
+                  <td class="text-info">65.3%</td>
                   <td>
                     <button class="btn btn-rounded btn-inverse-info btn-icon" title="Edit User">
                       <i class="ti-pencil"></i>
@@ -46,7 +46,39 @@
                     <button class="btn btn-rounded btn-inverse-danger btn-icon" title="Remove User">
                       <i class="ti-trash"></i>
                     </button>
-                  </th>
+                  </td>
+                </tr>
+                <tr>
+                  <td> 2</td>
+                  <td>Mr flawless</td>
+                  <td>Works</td>
+                  <td>Non Academic staff</td>
+                  <td>70,000</td>
+                  <td class="text-info">50.4%</td>
+                  <td>
+                    <button class="btn btn-rounded btn-inverse-info btn-icon" title="Edit User">
+                      <i class="ti-pencil"></i>
+                    </button>
+                    <button class="btn btn-rounded btn-inverse-danger btn-icon" title="Remove User">
+                      <i class="ti-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td> 3</td>
+                  <td>Mr ICT</td>
+                  <td>ICT</td>
+                  <td>Non Academic staff</td>
+                  <td>90,000</td>
+                  <td class="text-info">65.3%</td>
+                  <td>
+                    <button class="btn btn-rounded btn-inverse-info btn-icon" title="Edit User">
+                      <i class="ti-pencil"></i>
+                    </button>
+                    <button class="btn btn-rounded btn-inverse-danger btn-icon" title="Remove User">
+                      <i class="ti-trash"></i>
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
