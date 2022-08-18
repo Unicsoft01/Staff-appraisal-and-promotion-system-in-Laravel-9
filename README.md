@@ -34,3 +34,6 @@ personal rating
 # important
 if apprasial level reach a certain levfel the admin can then initiate the command from his dashboard
 -- upon login and 
+
+# create a model and also a migrattion table to be inserted into database
+-- php artisan make:Model Attendance -m
