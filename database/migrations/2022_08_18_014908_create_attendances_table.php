@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('attendances', function (Blueprint $table) {
             $table->increments('id');
             $table->string('staff_username');
-            $table->string('attendance_remark');
             $table->string('remark');
             $table->string('reward');
             $table->timestamps();

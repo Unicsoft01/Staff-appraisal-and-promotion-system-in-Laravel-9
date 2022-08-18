@@ -37,3 +37,24 @@ if apprasial level reach a certain levfel the admin can then initiate the comman
 
 # create a model and also a migrattion table to be inserted into database
 -- php artisan make:Model Attendance -m
+
+```php
+C:\xampp_8_1_6\htdocs\staff_appraisal_promotion_system>php artisan tinker
+Psy Shell v0.11.5 (PHP 8.1.6 — cli) by Justin Hileman
+>>> $attends = new App\Models\Attendance();
+=> App\Models\Attendance {#3576}
+
+>>> $attends->staff_username = 'admin';
+=> "admin"
+
+>>> $attends->remark = 'on time';
+=> "on time"
+
+>>> $attends->reward = '2.5';
+=> "2.5"
+
+>>> $attends->save();
+=> true
+
+>>>                                                                                                                     
+```
