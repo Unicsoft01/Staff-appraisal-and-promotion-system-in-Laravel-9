@@ -6,7 +6,7 @@
                   <div class="card">
                     <div class="card-body">
                       <p class="card-title mb-0">Tasks Evaluated</p> -->
-        
+
         <!-- <div class="content-wrapper"> -->
           <div class="row">
             <div class="clock">
@@ -40,7 +40,7 @@
 
             <!-- Validation Errors -->
             <x-auth-validation-errors class="mb-4 text-danger" :errors="$errors" />
-                  <form method="POST" action="{{ route('save.attend')}}" class="forms-sample">
+                  <form method="POST" action="{{ route('Attendances.store')}}" class="forms-sample">
                     @csrf
                     <div class="form-group">
                       <label for="exampleInputUsername1">Username</label>

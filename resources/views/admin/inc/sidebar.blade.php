@@ -15,8 +15,8 @@
     </a>
     <div class="collapse" id="ui-basic">
       <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link" href="{{ route('take_attendance') }}">Take Attendance</a></li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('att_rev') }}">attendace Rev.</a></li>
+        <li class="nav-item"> <a class="nav-link" href="{{ route('Attendances.create') }}">Take Attendance</a></li>
+        <li class="nav-item"> <a class="nav-link" href="{{ route('Attendances.index') }}">attendace Rev.</a></li>
       </ul>
     </div>
   </li>

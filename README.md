@@ -38,7 +38,7 @@ if apprasial level reach a certain levfel the admin can then initiate the comman
 # create a model and also a migrattion table to be inserted into database
 -- php artisan make:Model Attendance -m
 
-```php
+``php
 C:\xampp_8_1_6\htdocs\staff_appraisal_promotion_system>php artisan tinker
 Psy Shell v0.11.5 (PHP 8.1.6 — cli) by Justin Hileman
 >>> $attends = new App\Models\Attendance();
@@ -57,4 +57,8 @@ Psy Shell v0.11.5 (PHP 8.1.6 — cli) by Justin Hileman
 => true
 
 >>>                                                                                                                     
-```
+``
+
+# 
+# create controller with rich and resource features
+-- php artisan make:controller AttendanceController --resource

@@ -24,32 +24,23 @@ Route::get('/', function () {
 
 // all routes in admin controlller class
 Route::controller(AdminController::class)->group(function (){
-    Route::get('/dashboard', 'Index')->middleware(['auth'])->name('dashboard'); 
-    Route::get('/logout', 'destroy')->middleware(['auth'])->name('logout'); 
-    Route::get('/admin_profile', 'Profile')->middleware(['auth'])->name('view_profile'); 
-    Route::get('/edit_admin_profile', 'EditProfile')->middleware(['auth'])->name('edit_profile'); 
-    Route::post('/save_admin_profile', 'SaveProfile')->middleware(['auth'])->name('store.profile'); 
+    Route::get('/dashboard', 'Index')->middleware(['auth'])->name('dashboard');
+    Route::get('/logout', 'destroy')->middleware(['auth'])->name('logout');
+    Route::get('/admin_profile', 'Profile')->middleware(['auth'])->name('view_profile');
+    Route::get('/edit_admin_profile', 'EditProfile')->middleware(['auth'])->name('edit_profile');
+    Route::post('/save_admin_profile', 'SaveProfile')->middleware(['auth'])->name('store.profile');
 
-    Route::get('/staffs/take_attendance', 'TakeAttendance')->middleware(['auth'])->name('take_attendance'); 
-    Route::get('/staffs/attendance/review', 'ReviewAttendance')->middleware(['auth'])->name('att_rev'); 
-    Route::get('/staffs/list', 'ListStaffs')->middleware(['auth'])->name('staff_list'); 
-    Route::get('/check_age_response_page', 'checkRespo')->name('check_respo'); 
-    // Route::get('/staffs/evaluate', 'EvaluateStaff')->middleware(['auth'])->name('evaluate'); 
-    Route::get('/staffs/evaluate', 'EvaluateStaff')->name('evaluate');//->middleware('check_age') 
+    // Route::get('/staffs/take_attendance', 'TakeAttendance')->middleware(['auth'])->name('take_attendance');
+    Route::get('/staffs/attendance/review', 'ReviewAttendance')->middleware(['auth'])->name('att_rev');
+    Route::get('/staffs/list', 'ListStaffs')->middleware(['auth'])->name('staff_list');
+    Route::get('/check_age_response_page', 'checkRespo')->name('check_respo');
+    // Route::get('/staffs/evaluate', 'EvaluateStaff')->middleware(['auth'])->name('evaluate');
+    Route::get('/staffs/evaluate', 'EvaluateStaff')->name('evaluate');//->middleware('check_age')
     Route::get('registeration', 'Userreg')->name('registeration');
 
 });
 
-// all routes in admin controlller class
-Route::controller(NewletterController::class)->group(function (){
-    Route::get('/newsletter/subscribe', 'newsletterForm')->middleware(['auth'])->name('news_letter'); 
-    Route::post('/newsletter/subscribe', 'StoreEmail')->middleware(['auth'])->name('news_letter'); 
-});
-
-// all routes in  AttendanceControlller class
-Route::controller(AttendanceController::class)->group(function (){
-    Route::post('/save/take_attendance', 'SaveAttendance')->name('save.attend'); 
-});
-
+// this loads all routes associated with this controller
+Route::resource('Attendances', AttendanceController::class);
 
 require __DIR__.'/auth.php';

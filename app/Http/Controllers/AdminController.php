@@ -28,7 +28,7 @@ class AdminController extends Controller
         $adminData = User::find($id);
         return view("admin.view_profile", compact('adminData'));
         // return view('admin.view_profile');
-    } 
+    }
 
     public function EditProfile()
     {
@@ -58,7 +58,7 @@ class AdminController extends Controller
         }
 
         $notification = array(
-            'message' => "Profile Updated Successfully!", 
+            'message' => "Profile Updated Successfully!",
             'alert-type' => "success"
         );
         if ($DataInDB->save()) {
@@ -69,15 +69,15 @@ class AdminController extends Controller
     }
 
     // Mark attendance for all staffs
-    public function TakeAttendance()
-    {
-        return view('admin.take_attendance');
-    } 
+    // public function TakeAttendance()
+    // {
+    //     return view('admin.take_attendance');
+    // }
 
-    public function ReviewAttendance()
-    {
-        return view('admin.att_rev');
-    }
+    // public function ReviewAttendance()
+    // {
+    //     return view('admin.att_rev');
+    // }
 
     public function ListStaffs()
     {

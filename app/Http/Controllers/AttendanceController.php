@@ -13,7 +13,7 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.att_rev');
     }
 
     /**
@@ -23,7 +23,7 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.take_attendance');
     }
 
     /**
@@ -86,3 +86,4 @@ class AttendanceController extends Controller
             // $request->validate([
             //     'username' => ['required', 'string', 'max:255'],
             // ]);
+
