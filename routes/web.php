@@ -28,6 +28,8 @@ Route::controller(AdminController::class)->group(function (){
     Route::get('/logout', 'destroy')->middleware(['auth'])->name('logout'); 
     Route::get('/admin_profile', 'Profile')->middleware(['auth'])->name('view_profile'); 
     Route::get('/edit_admin_profile', 'EditProfile')->middleware(['auth'])->name('edit_profile'); 
+    Route::post('/save_admin_profile', 'SaveProfile')->middleware(['auth'])->name('store.profile'); 
+
     Route::get('/staffs/take_attendance', 'TakeAttendance')->middleware(['auth'])->name('take_attendance'); 
     Route::get('/staffs/attendance/review', 'ReviewAttendance')->middleware(['auth'])->name('att_rev'); 
     Route::get('/staffs/list', 'ListStaffs')->middleware(['auth'])->name('staff_list'); 

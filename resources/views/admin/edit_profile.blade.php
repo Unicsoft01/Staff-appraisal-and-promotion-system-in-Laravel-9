@@ -6,6 +6,7 @@
     <div class="card">
       <div class="card-body">
           <form method="POST" action="{{ route('store.profile') }}" enctype="multipart/form-data">
+            @csrf
             <div class="row">
               <div class="col-8 col-md-10 mt-3">
                 <p class="card-title">Edit {{Auth::user()->username}}'s Profile</p>
