@@ -71,7 +71,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{{asset(Auth::user()->profile_image)}}" alt="{{asset(Auth::user()->profile_image)}}"/>
+              <img src="{{Auth::user()->profile_image}}" alt="{{Auth::user()->profile_image}}"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{{ route('view_profile') }}">

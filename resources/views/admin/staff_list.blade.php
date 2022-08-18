@@ -6,14 +6,15 @@
     <div class="card">
       <div class="card-body">
         <div class="row">
-          
+
         <div class="col-10 mt-3">
           <p class="card-title">Attendance review and reward</p>
         </div>
         <div class="col-2 mb-2">
-          <button class="btn btn-success">
+            <a href="{{route('Users.create')}}"  class="btn btn-success">Add Staff</a>
+          {{-- <button class="btn btn-success">
             Add Staff
-          </button>
+          </button> --}}
         </div>
         </div>
         <div class="row">
@@ -88,6 +89,6 @@
       </div>
     </div>
   </div>
-</div>            
+</div>
 @endsection
 

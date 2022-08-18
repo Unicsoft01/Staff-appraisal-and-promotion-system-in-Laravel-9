@@ -29,7 +29,7 @@
     <div class="collapse" id="form-elements">
       <ul class="nav flex-column sub-menu">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('staff_list') }}">Staffs</a>
+          <a class="nav-link" href="{{ route('Users.index') }}">Staffs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('evaluate') }}">Evaluate Task</a>

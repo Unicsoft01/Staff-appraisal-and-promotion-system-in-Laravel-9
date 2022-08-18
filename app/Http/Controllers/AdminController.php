@@ -79,10 +79,10 @@ class AdminController extends Controller
     //     return view('admin.att_rev');
     // }
 
-    public function ListStaffs()
-    {
-        return view('admin.staff_list');
-    }
+    // public function ListStaffs()
+    // {
+    //     return view('admin.staff_list');
+    // }
 
     public function EvaluateStaff()
     {

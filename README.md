@@ -62,3 +62,5 @@ Psy Shell v0.11.5 (PHP 8.1.6 — cli) by Justin Hileman
 # 
 # create controller with rich and resource features
 -- php artisan make:controller AttendanceController --resource
+  
+  # models can hold things we wish to over ride during in database naming

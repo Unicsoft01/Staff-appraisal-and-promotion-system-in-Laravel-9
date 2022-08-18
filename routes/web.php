@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\NewletterController;
+use App\Http\Controllers\StaffsController;
 use App\Http\Controllers\AttendanceController;
 
 
@@ -42,5 +42,8 @@ Route::controller(AdminController::class)->group(function (){
 
 // this loads all routes associated with this controller
 Route::resource('Attendances', AttendanceController::class);
+
+Route::resource('Users', StaffsController::class);
+
 
 require __DIR__.'/auth.php';
