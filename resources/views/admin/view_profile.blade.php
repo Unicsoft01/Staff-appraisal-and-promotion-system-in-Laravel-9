@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-12">
           <center>
-              <img src="{{asset('/backend_asset/images/faces/face28.jpg')}}" alt="profile"/>
+              <img src="{{asset(Auth::user()->profile_image)}}" alt="profile"/>
           </center>
 
                 <div class="card-body">

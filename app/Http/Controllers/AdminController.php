@@ -38,12 +38,28 @@ class AdminController extends Controller
         return view('admin.edit_profile');
     }
 
-    public function SaveProfile()
+    public function SaveProfile(Request $requestDataFromForm)
     {
-        // $id = Auth::user()->id;
-        // $adminData = User::find($id);
-        // return view("admin.view_profile", compact('adminData'));
-        return view('admin.edit_profile');
+        $id = Auth::user()->id;
+        $DataInDB = User::find($id);
+        $DataInDB->name = $requestDataFromForm->name;
+        $DataInDB->email = $requestDataFromForm->email;
+        $DataInDB->username = $requestDataFromForm->username;
+
+        if ($requestDataFromForm->file('profile_image'))
+        {
+            // hold uploaded file deatials\]
+            $file = $requestDataFromForm->file('profile_image');
+            $filename = date('YmdHi').$file->getclientOriginalName();
+            // move file to public folder
+            $file->move(public_path('upload'), $filename);
+            // set database names to save
+            $DataInDB['profile_image'] = 'upload/'.$filename;
+        }
+        if ($DataInDB->save()) {
+           return back();
+        }
+
     }
 
     // Mark attendance for all staffs

@@ -18,8 +18,8 @@
             <div class="row">
               <div class="col-12">
                   <center>
-                    <img src="{{asset('/backend_asset/images/faces/face28.jpg')}}" alt="profile"/>
-                    <input type="file" class="bg-info-inverse" placeholder="Username" name="profile_image">
+                    <img src="{{asset(Auth::user()->profile_image)}}" alt="profile"/>
+                    <input type="file" class="bg-info-inverse" name="profile_image">
                   </center>
 
                     <div class="card-body">
