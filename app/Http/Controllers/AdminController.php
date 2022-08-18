@@ -56,8 +56,14 @@ class AdminController extends Controller
             // set database names to save
             $DataInDB['profile_image'] = 'upload/'.$filename;
         }
+
+        $notification = array(
+            'message' => "Profile Updated Successfully!", 
+            'alert-type' => "success"
+        );
         if ($DataInDB->save()) {
-           return back();
+           // return back();
+           return redirect()->route('view_profile')->with($notification);
         }
 
     }

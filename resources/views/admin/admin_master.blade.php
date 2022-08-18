@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="{{asset('/backend_asset/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('/backend_asset/images/favicon.png')}}" />
+
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 </head>
 <body>
   <div class="container-scroller">
@@ -67,6 +69,31 @@
   <script src="{{asset('/backend_asset/js/dashboard.js')}}"></script>
   <script src="{{asset('/backend_asset/js/Chart.roundedBarCharts.js')}}"></script>
   <!-- End custom js for this page-->
+       
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+ <script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script>
 </body>
 
 </html>
