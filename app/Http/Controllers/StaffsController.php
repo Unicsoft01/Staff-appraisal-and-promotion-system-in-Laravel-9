@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class StaffsController extends Controller
 {
@@ -13,7 +14,9 @@ class StaffsController extends Controller
      */
     public function index()
     {
-        return view('admin.staff_list');
+        $users = User::all();
+        // return view('admin.staff_list')->with('users');
+        return view('admin.staff_list', compact('users'));
     }
 
     /**
@@ -45,7 +48,7 @@ class StaffsController extends Controller
      */
     public function show($id)
     {
-        //
+        return  User::find($id);
     }
 
     /**
