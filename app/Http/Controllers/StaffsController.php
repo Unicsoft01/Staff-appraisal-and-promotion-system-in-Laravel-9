@@ -14,6 +14,7 @@ class StaffsController extends Controller
      */
     public function index()
     {
+        // $users = User::orderBy('title', 'asc')->get();
         $users = User::all();
         // return view('admin.staff_list')->with('users');
         return view('admin.staff_list', compact('users'));
@@ -48,7 +49,8 @@ class StaffsController extends Controller
      */
     public function show($id)
     {
-        return  User::find($id);
+        $user = User::find($id);
+        return view('admin.user_profile.view_profile', compact('user'));
     }
 
     /**

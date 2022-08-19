@@ -29,6 +29,12 @@
                         <hr>
                         <h4 class="card-title">Username: <input type="text" value="{{Auth::user()->username}}" name="username"></h4>
                         <hr>
+                        <h4 class="card-title">User type: {{Auth::user()->account_type}}</h4>
+                        <hr>
+                        <h4 class="card-title">Salary: {{Auth::user()->salary}}</h4>
+                        <hr>
+                        <h4 class="card-title">Appraisal Level: {{ Auth::user()->app_level }}</h4>
+                        <hr>
                     </div>
               </div>
             </div>
@@ -36,6 +42,6 @@
       </div>
     </div>
   </div>
-</div>            
+</div>
 @endsection
 

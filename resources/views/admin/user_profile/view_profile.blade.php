@@ -8,7 +8,7 @@
         <div class="row">
 
         <div class="col-8 col-md-10 mt-3">
-          <p class="card-title">{{Auth::user()->username}}'s Profile Page</p>
+          <p class="card-title">{{$user->username}}'s Profile Page</p>
         </div>
         <div class="col-4 col-md-2 mb-2">
           <a href="{{route('edit_profile')}}" class="btn btn-success">
@@ -19,21 +19,21 @@
         <div class="row">
           <div class="col-12">
           <center>
-              <img src="{{asset(Auth::user()->profile_image)}}" alt="profile"/>
+              <img src="{{asset($user->profile_image)}}" alt="profile"/>
           </center>
 
                 <div class="card-body">
-                    <h4 class="card-title">Name: {{ $adminData->name }}</h4>
+                    <h4 class="card-title">Name: {{ $user->name }}</h4>
                     <hr>
-                    <h4 class="card-title">Email: {{ Str::ucfirst($adminData->email) }}</h4>
+                    <h4 class="card-title">Email: {{ Str::ucfirst($user->email) }}</h4>
                     <hr>
-                    <h4 class="card-title">Username: {{ $adminData->username }}</h4>
+                    <h4 class="card-title">Username: {{ $user->username }}</h4>
                     <hr>
-                    <h4 class="card-title">User type: {{ $adminData->account_type }}</h4>
+                    <h4 class="card-title">User type: {{ $user->account_type }}</h4>
                     <hr>
-                    <h4 class="card-title">Salary: {{ $adminData->salary }}</h4>
+                    <h4 class="card-title">Salary: {{ $user->salary }}</h4>
                     <hr>
-                    <h4 class="card-title">Appraisal Level: {{ $adminData->app_level }}</h4>
+                    <h4 class="card-title">Appraisal Level: {{ $user->app_level }}</h4>
                     <hr>
                 </div>
 
