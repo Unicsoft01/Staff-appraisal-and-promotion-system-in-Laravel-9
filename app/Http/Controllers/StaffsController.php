@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use DB;
 
 class StaffsController extends Controller
 {
@@ -15,11 +16,13 @@ class StaffsController extends Controller
     public function index()
     {
         // using eloquen models to query database
-        $users = User::orderBy('created_at', 'desc')->get();
+        // $users = User::orderBy('created_at', 'desc')->get();
+        // $users = User::orderBy('created_at', 'desc')->paginate(1); // adding paginations to users lists;
         // $users = User::where('account_type', 'admin')->get();
         // $users = User::all();
 
         // using sql queries to query the database
+        $users = DB::select("SELECT * FROM users WHERE account_type != 'admin' order by created_at desc");
         // return view('admin.staff_list')->with('users');
         return view('admin.staff_list', compact('users'));
     }

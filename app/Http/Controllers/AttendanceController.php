@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Attendance;
+use App\Models\User;
+use DB;
 
 class AttendanceController extends Controller
 {
@@ -36,7 +38,33 @@ class AttendanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate
+        $this->validate($request, [
+            'username' => 'required'
+        ] );
+
+        $user = $request->username;
+        $RegUsers = DB::select("SELECT username FROM users where username = '$user'");
+        if ($RegUsers) {
+            $attendance = new Attendance;
+            $attendance->staff_username = $request->username;
+            $attendance->remark ="On time";
+            $attendance->reward ="2.4";
+
+            if ($attendance->save()) {
+               return back();
+            }
+            else
+            {
+                return "An error OCcured";
+            }
+        }
+        else
+        {
+            {{"Couldnt process request!"; }}
+        }
+
+
     }
 
     /**
