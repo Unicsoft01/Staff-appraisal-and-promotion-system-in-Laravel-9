@@ -14,8 +14,12 @@ class StaffsController extends Controller
      */
     public function index()
     {
-        // $users = User::orderBy('title', 'asc')->get();
-        $users = User::all();
+        // using eloquen models to query database
+        $users = User::orderBy('created_at', 'desc')->get();
+        // $users = User::where('account_type', 'admin')->get();
+        // $users = User::all();
+
+        // using sql queries to query the database
         // return view('admin.staff_list')->with('users');
         return view('admin.staff_list', compact('users'));
     }
