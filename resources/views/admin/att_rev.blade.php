@@ -8,20 +8,21 @@
         <p class="card-title">Attendance review and reward</p>
         <div class="row">
           <div class="col-12">
+
+            @if (count($attendances) > 0)
             <div class="table-responsive">
-            <table id="example" class="text-center display expandable-table" style="width:100%">
-              <thead>
-                <tr>
-                  <th class="">S/No.</th>
-                  <th class="bg-info">Staffs</th>
-                  <th class="bg-info">Date</th>
-                  <th class="bg-info">Time in</th>
-                  <th class="bg-info">Remark</th>
-                  <th class="bg-info">Appraisal level</th>
-                </tr>
-              </thead>
-              <tbody>
-                @if (count($attendances) > 0)
+                <table id="example" class="text-center display expandable-table" style="width:100%">
+                  <thead>
+                    <tr>
+                      <th class="">S/No.</th>
+                      <th class="bg-info">Staffs</th>
+                      <th class="bg-info">Date</th>
+                      <th class="bg-info">Time in</th>
+                      <th class="bg-info">Remark</th>
+                      <th class="bg-info">Appraisal level</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     @foreach ( $attendances as $attendance)
                     <tr>
                         <th> {{$attendance->id}}</th>
@@ -32,17 +33,17 @@
                         <th class="text-danger">-2.3</th>
                     </tr>
                     @endforeach
+                  </tbody>
+                </table>
+              </div>
                 @else
                 <div class="text-center">
-                    <b>
-                        {{'Nothing to display'}}
-                    </b>
+                    <h3>
+                        {{'No record found, Please Go take some Attendances'}}
+                    </h3>
                 </div>
                 @endif
 
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
       </div>
