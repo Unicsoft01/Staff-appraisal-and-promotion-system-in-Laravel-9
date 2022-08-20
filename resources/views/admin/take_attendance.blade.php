@@ -45,6 +45,7 @@
                     <div class="form-group">
                       <label for="exampleInputUsername1">Username</label>
                       <input style="border-radius:2pc ;" type="text" class="text center form-control" name="username" placeholder="Username">
+                      <input style="border-radius:2pc ;" type="hidden" class="text center form-control" name="time" value=" {{ date('h:i:s',strtotime('+1 hour')) }}">
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
                     <button name="cancel" class="btn btn-light">Cancel</button>

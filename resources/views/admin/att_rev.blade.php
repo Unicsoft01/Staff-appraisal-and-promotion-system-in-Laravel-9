@@ -15,7 +15,7 @@
                   <thead>
                     <tr>
                       <th class="">S/No.</th>
-                      <th class="bg-info">Staffs</th>
+                      <th class="bg-info">Usernames</th>
                       <th class="bg-info">Date</th>
                       <th class="bg-info">Time in</th>
                       <th class="bg-info">Remark</th>
@@ -27,10 +27,16 @@
                     <tr>
                         <th> {{$attendance->id}}</th>
                         <th>{{$attendance->staff_username}}</th>
-                        <th>20/06/22</th>
-                        <th>8:45:23 am</th>
-                        <th>Very Late</th>
-                        <th class="text-danger">-2.3</th>
+                        <th>{{ date('D, d/m/y', strtotime($attendance->created_at))}}</th>
+                        <th>{{ date('h:i:s a', strtotime($attendance->created_at))}}</th>
+                        <th>{{$attendance->remark}}</th>
+                        @if ($attendance->reward == 10)
+                            <th class="text-success">+{{ $attendance->reward }}</th>
+                        @elseif ($attendance->reward == 5)
+                            <th class="text-primary">+{{ $attendance->reward }}</th>
+                        @else
+                            <th class="text-danger">+{{ $attendance->reward }}</th>
+                        @endif
                     </tr>
                     @endforeach
                   </tbody>

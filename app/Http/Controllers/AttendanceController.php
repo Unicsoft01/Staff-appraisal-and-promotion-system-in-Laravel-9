@@ -44,15 +44,38 @@ class AttendanceController extends Controller
         ] );
 
         $user = $request->username;
+        $userTime = date('h:i:s', intval($request->time));
         $RegUsers = DB::select("SELECT username FROM users where username = '$user'");
+        // $request must exist in db
         if ($RegUsers) {
             $attendance = new Attendance;
-            $attendance->staff_username = $request->username;
-            $attendance->remark ="On time";
-            $attendance->reward ="2.4";
+            $attendance->staff_username = $user;
+            // check for time and send approp value to db
+            $EndTime = date('h:i:s',1660901400); // 9:30
+            $startTime = date('h:i:s',1660894200); // 7:30
+            // Early timing
+            if ($userTime <= $startTime) {
+                $attendance->remark ="early";
+                $attendance->reward ="10";
+            }
+            // on timing
+            else if ($userTime > $startTime && $userTime < $EndTime ) {
+                $attendance->remark ="on time";
+                $attendance->reward ="5";
+            }
+            else
+            {
+                $attendance->remark ="very late";
+                $attendance->reward ="2";
+            }
+            // show notifications
+            $notification = array(
+                'message' => "Attendance Taken Successfully!",
+                'alert-type' => "success"
+            );
 
             if ($attendance->save()) {
-               return back();
+               return redirect()->route('Attendances.index')->with($notification);
             }
             else
             {
@@ -61,7 +84,11 @@ class AttendanceController extends Controller
         }
         else
         {
-            {{"Couldnt process request!"; }}
+            $notification_ = array(
+                'message' => "The username you entered does not exist in our database!",
+                'alert-type' => "warning"
+            );
+               return back()->with($notification_);
         }
 
 
