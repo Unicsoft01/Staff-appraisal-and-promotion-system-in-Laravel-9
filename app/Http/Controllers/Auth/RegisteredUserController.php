@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\AppraisalLevel;
 
 class RegisteredUserController extends Controller
 {
@@ -37,7 +38,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'dpassword' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
@@ -46,6 +47,17 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        // automatically create a row in appr table with new user details
+        if($user)
+        {
+            $appr = new AppraisalLevel;
+            $appr->user = $request->username;
+            $appr->app_level = 10;
+            $appr->status = 'starter';
+            $appr->comment = "just began";
+            $appr->save();
+        }
 
         event(new Registered($user));
 

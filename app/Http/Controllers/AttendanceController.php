@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppraisalLevel;
 use Illuminate\Http\Request;
 use App\Models\Attendance;
 use App\Models\User;
@@ -49,7 +50,7 @@ class AttendanceController extends Controller
         // $request must exist in db
         if ($RegUsers) {
             $attendance = new Attendance;
-            // $appr = new Attendance;
+            $appr = new AppraisalLevel;
             $attendance->staff_username = $user;
             // check for time and send approp value to db
             $EndTime = date('h:i:s',1660901400); // 9:30
@@ -59,7 +60,7 @@ class AttendanceController extends Controller
                 $attendance->remark ="early";
                 $attendance->reward ="10";
             }
-            // on timing 
+            // on timing
             else if ($userTime > $startTime && $userTime < $EndTime ) {
                 $attendance->remark ="on time";
                 $attendance->reward ="5";
