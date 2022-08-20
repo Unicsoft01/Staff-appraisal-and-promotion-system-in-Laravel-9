@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
+        // appraisal_id	level	staff_id	comme
         Schema::create('appraisal_levels', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('staff_id');
+            $table->string('app_level');
+            $table->string('status');
+            $table->string('comment');
             $table->timestamps();
         });
     }

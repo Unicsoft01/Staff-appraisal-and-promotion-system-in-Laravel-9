@@ -59,7 +59,7 @@ class AttendanceController extends Controller
                 $attendance->remark ="early";
                 $attendance->reward ="10";
             }
-            // on timing
+            // on timing 
             else if ($userTime > $startTime && $userTime < $EndTime ) {
                 $attendance->remark ="on time";
                 $attendance->reward ="5";
