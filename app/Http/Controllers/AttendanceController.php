@@ -44,11 +44,12 @@ class AttendanceController extends Controller
         ] );
 
         $user = $request->username;
-        $userTime = date('h:i:s', intval($request->time));
+        $userTime = date('h:i:s', strtotime("+1 hour"));
         $RegUsers = DB::select("SELECT username FROM users where username = '$user'");
         // $request must exist in db
         if ($RegUsers) {
             $attendance = new Attendance;
+            // $appr = new Attendance;
             $attendance->staff_username = $user;
             // check for time and send approp value to db
             $EndTime = date('h:i:s',1660901400); // 9:30
