@@ -63,6 +63,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        $notification = [
+            'message' = 'Profile created Successfully';
+            
+        ]
+        return redirect(RouteServiceProvider::HOME)->with($notification);
     }
 }
